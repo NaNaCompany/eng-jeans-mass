@@ -1,0 +1,53 @@
+{
+  "id": "E108",
+  "value": 1.3527104119779608e+31,
+  "method": "Independent Python Decimal, precision 80 decimal digits; direct analytic SI equation with binary64 inputs decoded exactly, no JavaScript model imports.",
+  "value_80_digits": "13527104119779609083210438755161.526166101203081337114315771755054413259044489940",
+  "cases": [
+    {
+      "name": "Doubling sound speed multiplies mass by eight",
+      "values": {
+        "sound": 400
+      },
+      "expected": 1.0821683295823687e+32
+    },
+    {
+      "name": "Four times density halves Jeans mass",
+      "values": {
+        "density": 4e-17
+      },
+      "expected": 6.763552059889804e+30
+    },
+    {
+      "name": "Unit sound speed and unit density analytic coefficient",
+      "values": {
+        "sound": 1,
+        "density": 1
+      },
+      "expected": 5347057395593839.0
+    },
+    {
+      "name": "Light-speed sound rejected",
+      "values": {
+        "sound": 299792458
+      },
+      "throws": true
+    },
+    {
+      "name": "Very dilute gas retains finite Jeans mass",
+      "values": {
+        "sound": 10000000.0,
+        "density": 1e-300
+      },
+      "expected": 5.347057395593838e+186
+    },
+    {
+      "name": "Underflowing Jeans mass rejected",
+      "values": {
+        "sound": 1e-300,
+        "density": 1e+300
+      },
+      "throws": true
+    }
+  ]
+}
